@@ -19,7 +19,7 @@ end
 local paste_image = function()
 	local root_path = lib.find_root_path(config.root_pattern)
 	vim.ui.input({ prompt = "Image path: ", default = root_path .. config.prefix }, function(input)
-		if input == nil then
+		if input == nil or input == root_path .. config.prefix then
 			return
 		end
 		local image_info = lib.get_image_info(input)
