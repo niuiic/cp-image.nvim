@@ -32,7 +32,7 @@ require("cp-image").setup(
         -- prefix = 'img' => default path = '${project_root}/img'
         prefix = "",
         -- used to search root path of the project
-        -- if .git does not exist, current file path would be used
+        -- if .git does not exist, current directory path would be used
         root_pattern = ".git",
     }
 )
