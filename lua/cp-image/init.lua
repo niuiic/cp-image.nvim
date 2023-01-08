@@ -1,16 +1,5 @@
 local lib = require("cp-image.lib")
-
-local config = {
-	cmd = function(path, image_type)
-		return string.format("xclip -selection clipboard -t image/%s -o > %s", image_type, path)
-	end,
-	---@diagnostic disable-next-line:unused-local
-	text = function(relative_path, file_name, full_path)
-		return string.format("![%s](%s)", file_name, relative_path)
-	end,
-	prefix = "",
-	root_pattern = ".git",
-}
+local config = require("cp-image.config")
 
 local setup = function(new_config)
 	config = vim.tbl_deep_extend("force", config, new_config or {})
@@ -18,8 +7,9 @@ end
 
 local paste_image = function()
 	local root_path = lib.find_root_path(config.root_pattern)
-	vim.ui.input({ prompt = "Image path: ", default = root_path .. config.prefix }, function(input)
-		if input == nil or input == root_path .. config.prefix then
+	local default_path = config.path(root_path)
+	vim.ui.input({ prompt = "Image path: ", default = default_path }, function(input)
+		if input == nil or input == default_path then
 			return
 		end
 		local image_info = lib.get_image_info(input)
