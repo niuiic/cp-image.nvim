@@ -23,7 +23,7 @@ local paste_image = function()
 		end
 		lib.generate_image(config.cmd, input)
 		local relative_path = string.sub(input, string.len(root_path) + 1)
-		lib.insert_text(config.text(relative_path, image_info.file_name, input))
+		lib.insert_text(config.text(relative_path, image_info.file_name, image_info.image_type, input))
 	end)
 end
 

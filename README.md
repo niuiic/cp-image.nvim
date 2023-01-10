@@ -26,7 +26,7 @@ require("cp-image").setup(
 		---@diagnostic disable-next-line:unused-local
 		-- text to insert
 		-- relative_path is relative to the root path of the project
-		text = function(relative_path, file_name, full_path)
+		text = function(relative_path, file_name, file_type, full_path)
 			return string.format("![%s](%s)", file_name, relative_path)
 		end,
 		-- default directory path to store image
