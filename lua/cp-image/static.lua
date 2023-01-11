@@ -12,4 +12,4 @@ local config = {
 	root_pattern = ".git",
 }
 
-return config
+return { config = config }
