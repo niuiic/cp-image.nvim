@@ -14,7 +14,7 @@ Paste the image from the clipboard and insert the reference code.
 
 ## Dependencies
 
-- [niuiic-core.nvim](https://github.com/niuiic/niuiic-core.nvim)
+- [niuiic/niuiic-core.nvim](https://github.com/niuiic/niuiic-core.nvim)
 
 ## Config
 
