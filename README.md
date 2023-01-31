@@ -12,7 +12,11 @@ Paste the image from the clipboard and insert the reference code.
 
 <img src="https://github.com/niuiic/assets/blob/main/cp-image.nvim/usage.gif" />
 
-# Config
+## Dependencies
+
+- [niuiic-core.nvim](https://github.com/niuiic/niuiic-core.nvim)
+
+## Config
 
 ```lua
 require("cp-image").setup(
@@ -36,6 +40,8 @@ require("cp-image").setup(
 		-- used to search root path of the project
 		-- if .git does not exist, current directory path would be used
 		root_pattern = ".git",
+		-- command to create directory
+		create_dir = "mkdir -p",
 	}
 )
 ```
