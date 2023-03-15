@@ -7,7 +7,7 @@ local setup = function(new_config)
 end
 
 local paste_image = function()
-	local root_path = core.file.find_root_path(static.config.root_pattern)
+	local root_path = core.file.root_path(static.config.root_pattern)
 	local default_path = static.config.path(root_path)
 	vim.ui.input({ prompt = "Image path: ", default = default_path }, function(input)
 		if input == nil or input == default_path then
