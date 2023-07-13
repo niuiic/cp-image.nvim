@@ -18,7 +18,7 @@ local paste_image = function()
 			vim.notify("wrong path", vim.log.levels.ERROR)
 			return
 		end
-		if string.find(input, root_path) == nil then
+		if string.find(input, root_path, 1, true) == nil then
 			vim.notify("wrong path", vim.log.levels.ERROR)
 			return
 		end
