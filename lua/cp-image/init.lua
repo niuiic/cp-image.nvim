@@ -1,5 +1,5 @@
 local core = require("niuiic-core")
-local lib = require("cp-image.lib")
+local utils = require("cp-image.utils")
 local static = require("cp-image.static")
 
 local setup = function(new_config)
@@ -13,7 +13,7 @@ local paste_image = function()
 		if input == nil or input == default_path then
 			return
 		end
-		local image_info = lib.get_image_info(input)
+		local image_info = utils.get_image_info(input)
 		if image_info.dir_path == nil or image_info.file_name == nil or image_info.image_type == nil then
 			vim.notify("wrong path", vim.log.levels.ERROR)
 			return
@@ -22,7 +22,7 @@ local paste_image = function()
 			vim.notify("wrong path", vim.log.levels.ERROR)
 			return
 		end
-		lib.generate_image(static.config.cmd, input)
+		utils.generate_image(static.config.cmd, input)
 		local relative_path = string.sub(input, string.len(root_path) + 1)
 		local pos = vim.api.nvim_win_get_cursor(0)
 		core.text.insert(static.config.text(relative_path, image_info.file_name, image_info.image_type, input), {
