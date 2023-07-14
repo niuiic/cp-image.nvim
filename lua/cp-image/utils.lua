@@ -1,4 +1,4 @@
-local core = require("niuiic-core")
+local core = require("core")
 local config = require("cp-image.static").config
 
 local get_image_info = function(full_path)

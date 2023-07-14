@@ -1,4 +1,4 @@
-local core = require("niuiic-core")
+local core = require("core")
 local utils = require("cp-image.utils")
 local static = require("cp-image.static")
 
