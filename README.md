@@ -40,8 +40,6 @@ require("cp-image").setup(
 		-- used to search root path of the project
 		-- if .git does not exist, current directory path would be used
 		root_pattern = ".git",
-		-- command to create directory
-		create_dir = "mkdir -p",
 	}
 )
 ```

@@ -14,8 +14,8 @@ end
 
 local generate_image = function(cmd, full_path)
 	local image_info = get_image_info(full_path)
-	if core.file.file_or_dir_exists(image_info.dir_path) == false then
-		vim.cmd(string.format("!%s %s", config.create_dir, image_info.dir_path))
+	if not core.file.file_or_dir_exists(image_info.dir_path) then
+		core.file.mkdir(image_info.dir_path)
 	end
 	vim.cmd(string.format("!" .. cmd(full_path, image_info.image_type)))
 	vim.notify("paste image to " .. full_path, vim.log.levels.INFO)

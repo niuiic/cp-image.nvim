@@ -10,7 +10,6 @@ local config = {
 		return project_root
 	end,
 	root_pattern = ".git",
-	create_dir = "mkdir -p",
 }
 
 return { config = config }
