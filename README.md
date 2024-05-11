@@ -2,6 +2,8 @@
 
 Paste the image from the clipboard and insert the reference code.
 
+[More neovim plugins](https://github.com/niuiic/awesome-neovim-plugins)
+
 ## Usage
 
 1. Take a screenshot or copy a image.
